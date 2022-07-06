@@ -1,24 +1,50 @@
-# README
+# Magic_BLog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Built With
 
-Things you may want to cover:
+- Ruby on Rails
+- PostgreSQL
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+To get a local copy up and running follow these simple example steps.
 
-* Configuration
+### Prerequisites
 
-* Database creation
+- [Ruby](https://www.ruby-lang.org/en/)
+- [Rails](https://gorails.com/)
 
-* Database initialization
+### Setup
 
-* How to run the test suite
+- Make sure you have Ruby on Rails set up properly on your computer
+- Clone or download this repo on your machine
+- Enter project directory
 
-* Services (job queues, cache servers, search engines, etc.)
+### Development Database
 
-* Deployment instructions
+```sh
+# Create user
+sudo -u postgres createuser blog -s
+# Create the database
+rake db:create
+# Create database Migration
+rails db:migrate
+```
 
-* ...
+### Install
+
+```sh
+bundle install
+```
+
+### Run
+
+```sh
+rails s
+```
+
+### Test
+
+```sh
+rspec
+```
