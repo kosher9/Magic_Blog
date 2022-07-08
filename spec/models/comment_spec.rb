@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
 
   before :each do
     @author = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
