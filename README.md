@@ -24,7 +24,7 @@ To get a local copy up and running follow these simple example steps.
 
 ```sh
 # Create user
-sudo -u postgres createuser blog -s
+sudo -u postgres createuser -e ced00 -s
 # Create the database
 rake db:create
 # Create database Migration
