@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  def index; end
+  def index
+    render html: '<div>Here is the list of our users</div>'.html_safe
+  end
 
-  def show; end
+  def show
+    render html: '<div>Here is the user you are looking for</div>'
+  end
 end
