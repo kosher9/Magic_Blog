@@ -4,6 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    render html: '<div>Here is the user you are looking for</div>'
+    render html: '<div>Here is the user you are looking for</div>'.html_safe
   end
 end
