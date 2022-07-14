@@ -1,12 +1,28 @@
 <div>
-  <di>
-    <%= @user.name %>
-  </di>
+  <div class="user-ctn">
+    <%= image_tag(@user.photo + "images/rss.jpg", size: "50x50") %>
 
-  <div>
-    <% @posts.each do |post| %>
-      <%= post.title %>
-      <%= post.text %>
-    <% end %>
+    <div class="user-l-info">
+      <h5><%= @user.name %></h5>
+      <h5>Number of posts : </h5>
+    </div>
+
   </div>
+  <% @posts.each do |post| %>
+    <%= link_to user_post_path(@user.id, post.id), class: "link-info" do %>
+      <div>
+        <%= link_to user_post_path(@user.id, post.id), class: "link-info" do %>
+          <%= post.title %>
+          <%= post.text %>
+        <% end %>
+      </div>
+    <% end %>
+    <div>
+      <h4>Username: Comment 1</h4>
+    </div>
+  <% end %>
+  <div>
+    <button>Pagination</button>
+  </div>
+
 </div>
