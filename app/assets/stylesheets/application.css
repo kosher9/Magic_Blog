@@ -36,3 +36,26 @@
     border-radius: 5px;
     background-color: rgba(102, 102, 102, 0.78);
 }
+
+.post-ctn{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px;
+}
+
+.post-info-ctn{
+    display: flex;
+    flex-direction: column;
+}
+
+.post-info-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post-right-info{
+    display: flex;
+    gap: 20px;
+}

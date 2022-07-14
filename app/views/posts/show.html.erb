@@ -1,4 +1,16 @@
-<div>
-  <h3>Post <%=@post.id %> by <%= @user.name %></h3>
-  <p><%= @post.text %></p>
+<div class="post-ctn">
+  <div class="post-info-ctn">
+    <div class="post-info-head">
+      <h3>Post <%=@post.id %> by <%= @user.name %></h3>
+      <div class="post-right-info">
+        <h5>Comment : x</h5>
+        <h5>Likes : x</h5>
+      </div>
+    </div>
+
+    <p><%= @post.text %></p>
+  </div>
+  <div>
+    <h6>Username: Comment</h6>
+  </div>
 </div>
