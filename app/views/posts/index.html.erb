@@ -1,1 +1,12 @@
-<div>Here is a list of all posts from that user</div>
+<div>
+  <di>
+    <%= @user.name %>
+  </di>
+
+  <div>
+    <% @posts.each do |post| %>
+      <%= post.title %>
+      <%= post.text %>
+    <% end %>
+  </div>
+</div>

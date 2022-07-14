@@ -1,1 +1,8 @@
-<div>Here is the user you are looking for</div>
+<div>
+  <%= @user.name %>
+  <%= @user.bio %>
+  <% @user.three_recent_posts.each do |post| %>
+    <%= post.title %>
+    <%= post.text %>
+  <% end %>
+</div>
