@@ -14,48 +14,49 @@
  *= require_self
  */
 
-.users-ctn{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-}
-.user-ctn{
-    height: 50px;
-    display: flex;
-    flex-direction: row;
+.users-ctn {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
 }
 
-.user-l-info{
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    margin-left: 10px;
-    border-radius: 5px;
-    background-color: rgba(102, 102, 102, 0.78);
+.user-ctn {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
 }
 
-.post-ctn{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 20px;
+.user-l-info {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: rgba(102, 102, 102, 0.78);
 }
 
-.post-info-ctn{
-    display: flex;
-    flex-direction: column;
+.post-ctn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px;
 }
 
-.post-info-head{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.post-info-ctn {
+  display: flex;
+  flex-direction: column;
 }
 
-.post-right-info{
-    display: flex;
-    gap: 20px;
+.post-info-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.post-right-info {
+  display: flex;
+  gap: 20px;
 }
