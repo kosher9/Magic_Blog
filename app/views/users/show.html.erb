@@ -23,7 +23,8 @@
     <% end %>
   </div>
   <div>
-    <button>See all posts</button>
+    <%= link_to user_posts_path(@user.id), class: "link-info" do %>
+      <button>See all posts</button>
+    <% end %>
   </div>
-
 </div>
