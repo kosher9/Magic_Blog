@@ -10,7 +10,10 @@
 
     <p><%= @post.text %></p>
   </div>
-  <div>
-    <h6>Username: Comment</h6>
-  </div>
+  <% @post.five_recent_comment.each do |comment| %>
+    <div>
+      <h6><%= comment.author.name %>: <%= comment.text %></h6>
+    </div>
+  <% end %>
+
 </div>
