@@ -8,4 +8,8 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
   end
+
+  def new
+    @user = ApplicationController.new.current_user
+  end
 end

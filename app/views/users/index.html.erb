@@ -1,5 +1,7 @@
 <div>
-  <%= link_to  %>
+  <%= link_to new_user_post_path(@user.id), class:"link-info" do %>
+    <button>Create new post</button>
+  <% end %>
 </div>
 <div class="users-ctn">
   <% @users.each do |user| %>
