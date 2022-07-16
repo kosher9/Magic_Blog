@@ -26,7 +26,7 @@ To get a local copy up and running follow these simple example steps.
 # Create user
 sudo -u postgres createuser -e ced00 -s
 # Create the database
-rake db:create
+rake db:new
 # Create database Migration
 rails db:migrate
 ```
