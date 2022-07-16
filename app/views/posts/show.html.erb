@@ -3,8 +3,8 @@
     <div class="post-info-head">
       <h3>Post <%=@post.id %> by <%= @user.name %></h3>
       <div class="post-right-info">
-        <h5>Comment : x</h5>
-        <h5>Likes : x</h5>
+        <h5>Comment : <%= @post.comments_counter %></h5>
+        <h5>Likes : <%= @post.likes_counter %></h5>
       </div>
     </div>
 
@@ -18,7 +18,11 @@
 
   <div>
     <%= link_to new_user_post_comment_path(@user, @post), class:"link-info" do %>
-      <button>Create new post</button>
+      <button>Add comment</button>
+    <% end %>
+
+    <%= link_to new_user_post_comment_path(@user, @post), class:"link-info" do %>
+      <button>Add like</button>
     <% end %>
   </div>
 

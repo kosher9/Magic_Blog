@@ -1,12 +1,35 @@
 class CommentsController < ApplicationController
   def new
+    puts("params #{params}")
+    @post = Post.find(params[:post_id])
     @user = ApplicationController.new.current_user
-    @post = @user.posts.new
-    render :new, locals: { post: @post }
+    @comment = @user.comments.new
+    render :new, locals: { comment: @comment }
   end
 
   def create
-    @user = User.find(params[:user_id])
-    add_comment = @user.posts.new(post_params)
+    @post = Post.find(params[:post_id])
+    @user = ApplicationController.new.current_user
+    add_comment = @user.comments.new(comment_params)
+    add_comment.post = @post
+    add_comment.author = @user
+    respond_to do |format|
+      format.html do
+        if add_comment.save
+          flash[:success] = 'Post created successfully'
+        else
+          flash.now[:error] = 'Error: Post could not be created'
+          render :new, locals: { comment: add_comment }
+        end
+      end
+      redirect_to user_posts_url
+    end
   end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:text)
+  end
+
 end

@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = ApplicationController.new.current_user
     add_post = @user.posts.new(post_params)
     respond_to do |format|
       format.html do
