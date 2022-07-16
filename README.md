@@ -25,6 +25,9 @@ To get a local copy up and running follow these simple example steps.
 ```sh
 # Create user
 sudo -u postgres createuser -e ced00 -s
+# Load the schema
+rails db:schema:load
+#----- If you want prefer this approach
 # Create the database
 rake db:create
 # Create database Migration
@@ -48,3 +51,31 @@ rails s
 ```sh
 rspec
 ```
+
+## Authors
+
+👤 **Cédric Kossi**
+
+- GitHub: [@kosher9](https://github.com/kosher9)
+- Twitter: [@kosherus](https://twitter.com/kosherus)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

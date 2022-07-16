@@ -1,10 +1,10 @@
 <div class="post-ctn">
   <div class="post-info-ctn">
     <div class="post-info-head">
-      <h3>Post <%=@post.id %> by <%= @user.name %></h3>
+      <h3>Post <%= @post.id %> by <%= @user.name %></h3>
       <div class="post-right-info">
-        <h5>Comment : x</h5>
-        <h5>Likes : x</h5>
+        <h5>Comment : <%= @post.comments_counter %></h5>
+        <h5>Likes : <%= @post.likes_counter %></h5>
       </div>
     </div>
 
@@ -15,5 +15,15 @@
       <h6><%= comment.author.name %>: <%= comment.text %></h6>
     </div>
   <% end %>
+
+  <div>
+    <%= link_to new_user_post_comment_path(@user, @post), class: "link-info" do %>
+      <button>Add comment</button>
+    <% end %>
+
+    <%= form_with model: @like, url: user_post_likes_path(@user, @post), method: :post, class: 'form' do |f| %>
+      <div> <%= f.submit "Add a like" %> </div>
+    <% end %>
+  </div>
 
 </div>
