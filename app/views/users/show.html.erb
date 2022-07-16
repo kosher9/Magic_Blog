@@ -1,1 +1,30 @@
-<div>Here is the user you are looking for</div>
+<div>
+  <div class="user-ctn">
+    <%= image_tag(@user.photo + "images/rss.jpg", size: "50x50") %>
+
+    <div class="user-l-info">
+      <h5><%= @user.name %></h5>
+      <h5>Number of posts : </h5>
+    </div>
+
+  </div>
+  <div>
+    <div>
+      <h5>Bio</h5>
+      <p><%= @user.bio %></p>
+    </div>
+    <% @user.three_recent_posts.each do |post| %>
+      <div>
+        <%= link_to user_post_path(@user.id, post.id), class: "link-info" do %>
+          <%= post.title %>
+          <%= post.text %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to user_posts_path(@user.id), class: "link-info" do %>
+      <button>See all posts</button>
+    <% end %>
+  </div>
+</div>

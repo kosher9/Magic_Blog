@@ -1,1 +1,13 @@
-<div>Here is a list of all users</div>
+<div class="users-ctn">
+  <% @users.each do |user| %>
+    <div class="user-ctn">
+        <%= image_tag( user.photo + "images/rss.jpg", size: "50x50") %>
+        <%= link_to user_path(user.id), class:"link-info" do %>
+        <div class="user-l-info">
+          <h5><%= user.name %></h5>
+          <h5>Number of posts : </h5>
+        </div>
+        <% end %>
+    </div>
+  <% end %>
+</div>
