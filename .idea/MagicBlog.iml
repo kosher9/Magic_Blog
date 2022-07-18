@@ -314,6 +314,37 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="bullet (vbundled(7.0.2)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/perf" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/rails" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/tasks" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/.github" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/perf" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/rails" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/tasks" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/.github" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/perf" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/rails" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/tasks" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/bullet-7.0.2/.github" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="capybara (vbundled(3.37.1)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -1455,6 +1486,28 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="uniform_notifier (vbundled(1.16.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/uniform_notifier-1.16.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/uniform_notifier-1.16.0/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/uniform_notifier-1.16.0/.github" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/uniform_notifier-1.16.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/uniform_notifier-1.16.0/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/uniform_notifier-1.16.0/.github" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/uniform_notifier-1.16.0/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.1.0/gems/uniform_notifier-1.16.0/.github" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="web-console (vbundled(4.2.0)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -1592,6 +1645,7 @@
         <option value="active_record:multi_db" />
         <option value="application_record" />
         <option value="benchmark" />
+        <option value="bullet:install" />
         <option value="channel" />
         <option value="controller" />
         <option value="generator" />
@@ -1645,6 +1699,7 @@
         <option value="active_record:multi_db" />
         <option value="application_record" />
         <option value="benchmark" />
+        <option value="bullet:install" />
         <option value="channel" />
         <option value="controller" />
         <option value="generator" />
