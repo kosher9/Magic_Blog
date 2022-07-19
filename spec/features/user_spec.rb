@@ -40,7 +40,7 @@ RSpec.describe 'Testing user index page' do
     end
 
     feature 'User show page' do
-      background { visit user_path(User.first.id) }
+      background { visit user_path(@first_user.id) }
 
       scenario 'I can see the user\'s profile picture' do
         expect(page.first('img')['src']).to have_content 'profile.jpg'
@@ -61,12 +61,6 @@ RSpec.describe 'Testing user index page' do
       scenario 'I can see the user\'s bio' do
         expect(page).to have_content('Developer.')
       end
-
-      scenario 'When I click a user\'s post, it redirects me to that post\'s show page.' do
-        click_link 'post title post text', match: :first
-        expect(current_path).to eq post_path(Post.first.id)
-      end
-
     end
   end
 end
