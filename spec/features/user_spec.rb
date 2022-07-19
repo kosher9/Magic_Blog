@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Testing user index page', type: :feature do
+RSpec.describe 'Testing user index page' do
   describe 'GET index' do
     before(:each) do
       @first_user = User.create(name: 'John', photo: 'profile.jpg', bio: 'Developer.', posts_counter: 0)
