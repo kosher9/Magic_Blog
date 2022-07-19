@@ -46,6 +46,11 @@ RSpec.describe 'Testing user index page' do
       scenario 'I can see a button that lets me view all of a user\'s posts' do
         expect(page).to have_content('See all posts')
       end
+
+      scenario 'I can see the user\'s username' do
+        expect(page).to have_content('John')
+      end
+
     end
   end
 end
