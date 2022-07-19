@@ -6,6 +6,8 @@ RSpec.describe 'Testing user index page' do
       @first_user = User.create(name: 'John', photo: 'profile.jpg', bio: 'Developer.')
       @second_user = User.create(name: 'Sarah', photo: 'profile.jpg', bio: 'Web Developer.')
       @second_user = User.create(name: 'Tobin', photo: 'profile.jpg', bio: 'Frontend Developer.')
+
+      @first_post = Post.create(author_id: @first_user, text: 'post text', title: 'post title')
     end
 
     feature 'User Index' do
@@ -56,6 +58,10 @@ RSpec.describe 'Testing user index page' do
       end
 
       scenario 'I can see the user\'s bio' do
+        expect(page).to have_content('Developer.')
+      end
+
+      scenario 'I can see the user\'s first 3 posts' do
         expect(page).to have_content('Developer.')
       end
 
