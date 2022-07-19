@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+# Bullet gem tracks and report inefficient queries
+gem 'bullet', group: 'development'
+
 ruby '3.1.2'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
@@ -55,6 +58,8 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 
   # Add Rspec for testing
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '>= 3.9.0'
 end
 
@@ -72,7 +77,5 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
-  gem 'rails-controller-testing'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'webdrivers', require: false
 end

@@ -1,18 +1,19 @@
 <div>
-  <%= link_to new_user_post_path(@user.id), class:"link-info" do %>
+  <%= link_to new_user_post_path(@user.id), class: "link-info" do %>
     <button>Create new post</button>
   <% end %>
 </div>
 <div class="users-ctn">
   <% @users.each do |user| %>
     <div class="user-ctn">
-        <%= image_tag( user.photo + "images/rss.jpg", size: "50x50") %>
-        <%= link_to user_path(user.id), class:"link-info" do %>
+      <%#= image_tag( user.photo, size: "50x50") %>
+      <img src="<%= user.photo %>" alt="image">
+      <%= link_to user_path(user.id), class: "link-info" do %>
         <div class="user-l-info">
           <h5><%= user.name %></h5>
-          <h5>Number of posts : </h5>
+          <h5>Number of posts : <%= user.posts_counter %></h5>
         </div>
-        <% end %>
+      <% end %>
     </div>
   <% end %>
 </div>
