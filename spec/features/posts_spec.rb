@@ -31,7 +31,6 @@ RSpec.describe Post, type: :model do
 end
 
 RSpec.describe 'Posts show page', type: :feature do
-
   before(:each) do
     @first_user = User.create(name: 'Nemwel', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                               bio: 'Teacher from Kenya.', posts_counter: 0)
