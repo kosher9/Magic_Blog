@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = Post.eager_load(:comments, :author).where(author_id: params[:user_id])
+    @posts = @user.posts.includes(:comments)
   end
 
   def show
