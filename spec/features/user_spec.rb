@@ -78,7 +78,6 @@ RSpec.describe 'Testing user index page', type: :feature do
         click_link 'See all posts'
         expect(current_path).to eq user_posts_path(@first_user.id)
       end
-
     end
   end
 end

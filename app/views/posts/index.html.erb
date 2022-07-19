@@ -14,6 +14,10 @@
         <%= post.title %>
         <%= post.text %>
       </div>
+      <div>
+        <h5>Comments : <%= post.comments_counter %></h5>
+        <h5>Likes : <%= post.likes_counter %></h5>
+      </div>
     <% end %>
     <div>
       <% post.comments.each do |comment| %>
