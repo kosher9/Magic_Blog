@@ -51,6 +51,14 @@ RSpec.describe 'Testing user index page' do
         expect(page).to have_content('John')
       end
 
+      scenario 'I can see the number of posts the user has written' do
+
+      end
+
+      scenario 'I can see the user\'s bio' do
+        expect(page).to have_content('Developer.')
+      end
+
     end
   end
 end
