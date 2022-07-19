@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'Testing user index page' do
   describe 'GET index' do
     before(:each) do
-      @first_user = User.create(name: 'John', photo: 'profile.jpg', bio: 'Developer.', posts_counter: 0)
-      @second_user = User.create(name: 'Sarah', photo: 'profile.jpg', bio: 'Web Developer.', posts_counter: 0)
-      @second_user = User.create(name: 'Tobin', photo: 'profile.jpg', bio: 'Frontend Developer.', posts_counter: 0)
+      @first_user = User.create(name: 'John', photo: 'profile.jpg', bio: 'Developer.')
+      @second_user = User.create(name: 'Sarah', photo: 'profile.jpg', bio: 'Web Developer.')
+      @second_user = User.create(name: 'Tobin', photo: 'profile.jpg', bio: 'Frontend Developer.')
     end
 
     feature 'User Index' do
@@ -41,6 +41,10 @@ RSpec.describe 'Testing user index page' do
 
       scenario 'I can see the user\'s profile picture' do
         expect(page.first('img')['src']).to have_content 'profile.jpg'
+      end
+
+      scenario 'I can see a button that lets me view all of a user\'s posts' do
+        expect(page).to have_content('See all posts')
       end
     end
   end
