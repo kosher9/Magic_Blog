@@ -1,6 +1,6 @@
 require 'rails_helper'
-RSpec.describe Post, type: :model do
-  describe 'For the Post model' do
+RSpec.describe 'Post', type: :feature do
+  describe 'Post index' do
     before(:each) do
       @user = User.create(name: 'Nemwel', photo: 'nemwel.jpg', bio: 'Taekwondo master.', posts_counter: 0)
       @post = Post.create(author: @user, title: 'Tests', text: 'testing', likes_counter: 7,
