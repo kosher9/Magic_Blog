@@ -30,11 +30,11 @@ RSpec.describe 'Post', type: :feature do
       end
 
       it 'I can see how many comments a post has.' do
-        expect(page).to have_content "Comments : 5"
+        expect(page).to have_content 'Comments : 5'
       end
 
       it 'I can see how many likes a post has.' do
-        expect(page).to have_content "Likes : 7"
+        expect(page).to have_content 'Likes : 7'
       end
 
       it 'I can see a section for pagination if there are more posts than fit on the view.' do

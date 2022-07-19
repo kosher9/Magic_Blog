@@ -38,9 +38,7 @@ RSpec.describe 'Testing user index page', type: :feature do
       scenario 'See profile picture for each user' do
         expect(page.first('img')['src']).to have_content 'profile.jpg'
       end
-
     end
-
 
     feature 'User show page' do
       background { visit user_path(@first_user.id) }
