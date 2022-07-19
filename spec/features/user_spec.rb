@@ -8,6 +8,7 @@ RSpec.describe 'Testing user index page' do
       @second_user = User.create(name: 'Tobin', photo: 'profile.jpg', bio: 'Frontend Developer.')
 
       @first_post = Post.create(author_id: @first_user, text: 'post text', title: 'post title')
+      @first_post.save
     end
 
     feature 'User Index' do
@@ -54,15 +55,16 @@ RSpec.describe 'Testing user index page' do
       end
 
       scenario 'I can see the number of posts the user has written' do
-
+        expect(page).to have_content("Number of posts : #{@first_user.posts_counter}")
       end
 
       scenario 'I can see the user\'s bio' do
         expect(page).to have_content('Developer.')
       end
 
-      scenario 'I can see the user\'s first 3 posts' do
-        expect(page).to have_content('Developer.')
+      scenario 'When I click a user\'s post, it redirects me to that post\'s show page.' do
+        click_link 'post title post text', match: :first
+        expect(current_path).to eq post_path(Post.first.id)
       end
 
     end

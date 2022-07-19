@@ -16,7 +16,9 @@
       </div>
     <% end %>
     <div>
-      <h4>Username: Comment 1</h4>
+      <% post.comments.each do |comment| %>
+        <h4><%= comment.author.name %>: <%= comment.text %>></h4>
+      <% end %>
     </div>
   <% end %>
   <div>
