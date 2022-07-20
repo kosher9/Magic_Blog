@@ -60,6 +60,12 @@ rspec
 - Twitter: [@kosherus](https://twitter.com/kosherus)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172)
 
+👤 **Nemwel Boniface**
+
+- GitHub: [@Nemwel Boniface](https://github.com/Nemwel-Boniface)
+- Twitter: [@Nemwel Boniface](https://twitter.com/nemwel_bonie)
+- LinkedIn: [@Nemwel Bonifacej](https://www.linkedin.com/in/nemwel-nyandoro/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
