@@ -2,14 +2,14 @@ class CommentsController < ApplicationController
   def new
     puts("params #{params}")
     @post = Post.find(params[:post_id])
-    @user = ApplicationController.new.current_user
+    @user = current_user
     @comment = @user.comments.new
     render :new, locals: { comment: @comment }
   end
 
   def create
     @post = Post.find(params[:post_id])
-    @user = ApplicationController.new.current_user
+    @user = current_user
     add_comment = Comment.create(author: @user, post: @post, text: comment_params['text'])
     @post.save
     respond_to do |format|

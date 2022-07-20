@@ -11,13 +11,13 @@ class PostsController < ApplicationController
 
   def new
     puts('life in new')
-    @user = ApplicationController.new.current_user
+    @user = current_user
     @post = @user.posts.new
     render :new, locals: { post: @post }
   end
 
   def create
-    @user = ApplicationController.new.current_user
+    @user = current_user
     add_post = @user.posts.new(post_params)
     respond_to do |format|
       format.html do
