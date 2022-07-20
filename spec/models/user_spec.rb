@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   it 'is valid with valid attributes ' do
     expect(User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                       bio: 'Teacher from Mexico.')).to be_valid
+                       bio: 'Teacher from Mexico.', email: 'wvw@gmail.com', password: 'dwefwe')).to be_valid
   end
 
   it 'is not valid with name empty ' do
@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
 
   it 'should return 3 posts' do
     author = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                         bio: 'Teacher from Mexico.')
+                         bio: 'Teacher from Mexico.', email: 'wvw@gmail.com', password: 'dwefwe')
     Post.create(author:, title: 'Hello', text: 'This is my first post')
     Post.create(author:, title: 'Hello', text: 'This is my first post')
     Post.create(author:, title: 'Hello', text: 'This is my first post')

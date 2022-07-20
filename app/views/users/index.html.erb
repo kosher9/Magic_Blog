@@ -4,6 +4,7 @@
   <% end %>
 </div>
 <div class="users-ctn">
+  <%# unless @users.empty? %>
   <% @users.each do |user| %>
     <div class="user-ctn">
       <%#= image_tag( user.photo, size: "50x50") %>
@@ -16,4 +17,5 @@
       <% end %>
     </div>
   <% end %>
+    <%# %>
 </div>
