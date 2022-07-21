@@ -13,6 +13,9 @@
   <% @post.five_recent_comment.each do |comment| %>
     <div>
       <h6><%= comment.author.name %>: <%= comment.text %></h6>
+      <% if can? :destroy, comment %>
+        <button>delete</button>
+      <% end %>
     </div>
   <% end %>
 
