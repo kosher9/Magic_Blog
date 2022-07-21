@@ -13,7 +13,17 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    puts 'Yes I can'
+    puts 'Yes I can destroy'
+    @post = Post.find(params[:id])
+    @comments = @post.comments.where(post_id: @post.id)
+    @likes = @post.likes.where(post_id: @post.id)
+    @likes.each do |like|
+      like.destroy
+    end
+    @comments.each do |comment|
+      comment.destroy
+    end
+    @post.destroy
   end
 
   def new
