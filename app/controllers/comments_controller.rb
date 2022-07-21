@@ -7,6 +7,11 @@ class CommentsController < ApplicationController
     render :new, locals: { comment: @comment }
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+  end
+
   def create
     @post = Post.find(params[:post_id])
     @user = current_user
