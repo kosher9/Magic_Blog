@@ -13,6 +13,9 @@
       <div>
         <%= post.title %>
         <%= post.text %>
+        <% if can? :destroy, post %>
+          <button>delete</button>
+        <% end %>
       </div>
       <div>
         <h5>Comments : <%= post.comments_counter %></h5>

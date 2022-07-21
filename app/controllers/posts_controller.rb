@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  # load_and_authorize_resource
+  # before_action :set_post, only: [:index, :show, :destroy]
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
@@ -7,6 +10,10 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
+  end
+
+  def destroy
+    puts 'Yes I can'
   end
 
   def new
