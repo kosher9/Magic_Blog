@@ -80,10 +80,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # To render an HTML page with debugging information, use the value :default
+  # config.debug_exception_response_format = :default
+
+  # To render debugging information preserving the response format, use the value :api
+  config.debug_exception_response_format = :api
 end
 
-# To render an HTML page with debugging information, use the value :default
-config.debug_exception_response_format = :default
-
-# To render debugging information preserving the response format, use the value :api
-config.debug_exception_response_format = :api
