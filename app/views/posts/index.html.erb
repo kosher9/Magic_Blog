@@ -21,7 +21,6 @@
     <% end %>
     <% if can? :destroy, post %>
       <div><%= button_to 'Delete', user_post_path(@user.id, post.id), method: :delete %></div>
-<!--      <button>Button</button>-->
     <% end %>
     <div>
       <% post.comments.each do |comment| %>

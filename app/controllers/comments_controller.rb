@@ -8,12 +8,16 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:post_id])
+    @user_post = User.find(params[:user_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
+    redirect_to user_post_path(@user_post.id, @post.id)
   end
 
   def create
     @post = Post.find(params[:post_id])
+    @user_post = User.find(params[:user_id])
     @user = current_user
     add_comment = Comment.create(author: @user, post: @post, text: comment_params['text'])
     @post.save
@@ -26,7 +30,7 @@ class CommentsController < ApplicationController
           render :new, locals: { comment: add_comment }
         end
       end
-      redirect_to user_posts_url
+      redirect_to user_post_path(@user_post.id, @post.id)
     end
   end
 
