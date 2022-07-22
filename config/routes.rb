@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'users#index'
   # get(devise_session)
-  resources :users, only: %i[index show] do
+  resources :users, only: [:index, :show] do
     resources :posts, only: %i[index show new create destroy] do
       resources :comments, only: %i[new create destroy]
       resources :likes, only: %i[new create]
@@ -13,8 +13,10 @@ Rails.application.routes.draw do
   end
 
   namespace :api, defaults: { format: :json } do
-    resources :posts, only: %i[index show new create destroy] do
-      resources :comments, only: %i[new create destroy]
+    resources :users, only: [:show] do
+      resources :posts, only: %i[index] do
+        resources :comments, only: %i[index create]
+      end
     end
   end
 end

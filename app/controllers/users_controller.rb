@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
   def index
+    redirect_to new_user_session_path if current_user.nil?
     @users = User.all
-    render json: @users, status: :ok
-    @current_user = current_user
+    @user = current_user
   end
 
   def show
     @user = User.find(params[:id])
-    render json: @user, status: :ok
   end
 end
