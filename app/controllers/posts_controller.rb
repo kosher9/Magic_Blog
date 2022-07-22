@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts.includes(:comments)
+    @posts = @user.posts.includes(:comments, :author)
   end
 
   def show
@@ -12,9 +12,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    puts 'Yes I can destroy'
     @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
     @post.destroy
+    redirect_to user_post_path(@user.id, @post.id)
   end
 
   def new
@@ -26,12 +27,12 @@ class PostsController < ApplicationController
 
   def create
     @user = current_user
-    add_post = @user.posts.new(post_params)
+    @add_post = Post.new(author: @user, title: post_params['title'], text: post_params['text'])
     respond_to do |format|
       format.html do
-        if add_post.save
+        if @add_post.save
           flash[:success] = 'Post created successfully'
-          redirect_to user_posts_path
+          redirect_to users_path
         else
           flash.now[:error] = 'Error: Post could not be created'
           render :new, locals: { post: add_post }
