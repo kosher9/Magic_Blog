@@ -3,8 +3,8 @@
     <div class="post-info-head">
       <h3>Post <%= @post.id %> by <%= @user.name %></h3>
       <div class="post-right-info">
-        <h5>Comments : <%= @post.comments_counter %></h5>
-        <h5>Likes : <%= @post.likes_counter %></h5>
+        <h5>Comments : <%= @post.comments.count %></h5>
+        <h5>Likes : <%= @post.likes.count %></h5>
       </div>
     </div>
 
@@ -13,6 +13,9 @@
   <% @post.five_recent_comment.each do |comment| %>
     <div>
       <h6><%= comment.author.name %>: <%= comment.text %></h6>
+      <% if can? :destroy, comment %>
+        <div><%= button_to 'Delete', user_post_comment_path(@user.id, @post.id, comment.id), method: :delete %></div>
+      <% end %>
     </div>
   <% end %>
 
