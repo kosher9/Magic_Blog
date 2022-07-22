@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Bullet gem tracks and report inefficient queries
 gem 'bullet', group: 'development'
 
-ruby '3.1.2'
+ruby '3.0.2'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
