@@ -3,7 +3,15 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts.includes(:comments, :author)
+    if current_user.nil?
+      redirect_to new_user_session_path
+      return
+    end
+    @posts = if current_user.role?
+               @user.posts.includes(:comments)
+             else
+               @user.posts.includes(:comments, :author)
+             end
   end
 
   def show

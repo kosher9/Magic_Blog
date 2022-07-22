@@ -15,8 +15,8 @@
         <%= post.text %>
       </div>
       <div>
-        <h5>Comments : <%= post.comments_counter %></h5>
-        <h5>Likes : <%= post.likes_counter %></h5>
+        <h5>Comments : <%= post.comments.count %></h5>
+        <h5>Likes : <%= post.likes.count %></h5>
       </div>
     <% end %>
     <% if can? :destroy, post %>
