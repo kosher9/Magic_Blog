@@ -3,11 +3,17 @@ class Ability
 
   def initialize(user)
     # can :read, [Post, Comment], author: user
-    return unless user.present?
+    def initialize(user)
 
-    can :destroy, [Post, Comment]
-    return unless user.role?
+      user ||= User.new # guest user (not logged in)
 
-    can :destroy, [Post, Comment]
+      if user.admin?
+        can :manage, :all
+      else
+        can :manage, Post, author: user
+        can :manage, Comment, author: user
+        can :read, :all
+      end
+    end
   end
 end
