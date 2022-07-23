@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  after_save :user_token
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, length: { minimum: 1 }
@@ -12,5 +13,9 @@ class User < ApplicationRecord
 
   def three_recent_posts
     posts.order(created_at: :desc).limit(3)
+  end
+
+  def user_token
+    update_column(:token, TokenAuthorization.jwt_encode(email))
   end
 end

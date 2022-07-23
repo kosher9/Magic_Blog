@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     end
   end
 
+  # Create a new user with token
+  post 'api/auth/sign_up', to: 'api/registration#create'
+  # Generate token for an existing user
+  get 'api/auth/:id', to: 'api/registration#auth'
+
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:show] do
       resources :posts, only: %i[index] do
