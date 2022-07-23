@@ -5,16 +5,15 @@ class Api::PostsController < ApplicationController
     return unless check_auth?(params[:user_id])
 
     @user = User.find(params[:user_id])
-    if @user.token?
-      decoded_token = TokenAuthorization.jwt_decode(@user.token)[0]['email']
-      unless decoded_token == @user.email
-        render json: { error: 'Unauthorized' }, status: :unauthorized
-        nil
-      end
-    else
-      @posts = Post.where(author_id: params[:user_id])
-      render json: { success: true, data: { posts: @posts } }
+    return unless @user.token?
+
+    decoded_token = TokenAuthorization.jwt_decode(@user.token)[0]['email']
+    unless decoded_token == @user.email
+      render json: { error: 'Unauthorized' }, status: :unauthorized
+      nil
     end
+    @posts = Post.where(author_id: params[:user_id])
+    render json: { success: true, data: { posts: @posts } }
   end
 
   private
