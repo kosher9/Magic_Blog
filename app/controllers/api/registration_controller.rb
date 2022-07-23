@@ -24,10 +24,11 @@ class Api::RegistrationController < ApplicationController
 
   def auth
     return unless check_auth?(params[:id])
+
     user = User.find(params[:id])
     email = user.email
     token = TokenAuthorization.jwt_encode(email)
-    user.update(token: token)
+    user.update(token:)
     render json: { message: 'Authenticated', token: user.token }, status: :ok
   end
 

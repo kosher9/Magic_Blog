@@ -3,20 +3,22 @@ require_relative '../../../app/controllers/concerns/json_web_tokens'
 class Api::CommentsController < ApplicationController
   def index
     return unless check_auth?(params[:user_id])
+
     @user = User.find(params[:user_id])
-    if @user.token?
-      decoded_token = TokenAuthorization.jwt_decode(@user.token)[0]['email']
-      if decoded_token == @user.email
-        @comments = Comment.where({ post_id: params[:post_id] }).order('created_at')
-        render json: { success: true, data: { comments: @comments } }, status: :ok
-      else
-        render json: { error: 'Unauthorized' }, status: :unauthorized
-      end
+    return unless @user.token?
+
+    decoded_token = TokenAuthorization.jwt_decode(@user.token)[0]['email']
+    if decoded_token == @user.email
+      @comments = Comment.where({ post_id: params[:post_id] }).order('created_at')
+      render json: { success: true, data: { comments: @comments } }, status: :ok
+    else
+      render json: { error: 'Unauthorized' }, status: :unauthorized
     end
   end
 
   def create
     return unless check_auth?(params[:user_id])
+
     @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
 
@@ -24,7 +26,7 @@ class Api::CommentsController < ApplicationController
       decoded_token = TokenAuthorization.jwt_decode(@user.token)[0]['email']
       unless decoded_token == @user.email
         render json: { error: 'Unauthorized' }, status: :unauthorized
-        return
+        nil
       end
     else
       @comment = Comment.create(author: @user, post: @post, text: comment_params['text'])
