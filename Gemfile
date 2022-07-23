@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Bullet gem tracks and report inefficient queries
 gem 'bullet', group: 'development'
 
-ruby '3.1.2'
+ruby '3.0.2'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
@@ -70,6 +70,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '>= 3.9.0'
+  gem 'rswag-specs'
 end
 
 group :development do
@@ -88,3 +89,8 @@ group :test do
   gem 'capybara'
   gem 'webdrivers', require: false
 end
+
+# Gem rswag
+gem 'rswag'
+gem 'rswag-api'
+gem 'rswag-ui'
