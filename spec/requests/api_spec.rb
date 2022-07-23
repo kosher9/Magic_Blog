@@ -2,7 +2,7 @@ require 'swagger_helper'
 
 RSpec.describe 'api', type: :request do
   path '/users/{user_id}/posts_list' do
-    #You may want to do customization of the parameter types below
+    # You may want to do customization of the parameter types below
     parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
 
     get('list_all_user_posts api') do
@@ -22,7 +22,7 @@ RSpec.describe 'api', type: :request do
   end
 
   path '/users/{user_id}/posts/{post_id}/comments_list' do
-    #You may want to do customization of the parameter types below
+    # You may want to do customization of the parameter types below
     parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
     parameter name: 'post_id', in: :path, type: :string, description: 'post_id'
 
@@ -44,7 +44,7 @@ RSpec.describe 'api', type: :request do
   end
 
   path '/users/{user_id}/posts/{post_id}/add_comment' do
-    #You may want to do customization of the parameter types below
+    # You may want to do customization of the parameter types below
     parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
     parameter name: 'post_id', in: :path, type: :string, description: 'post_id'
 
